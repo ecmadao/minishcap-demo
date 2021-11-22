@@ -2,20 +2,35 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div class="relative w-full h-full flex justify-center items-center font-alata">
+    <Header />
+    <!-- <img alt="Vue logo" src="./assets/logo.png" class="absolute top-0 left-0"/> -->
+    <div>
+      <HelloWorld msg="Hello Vue 3 + TypeScript + Vite"/>
+    </div>
+  </div>
 </template>
 
 <style>
+@font-face {
+  font-family: "Alata";
+  src: local("Alata"),   url(./assets/fonts/Alata-Regular.ttf) format("truetype");
+}
+
+html, body, #app {
+  height: 100%;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding: 1.5rem;
 }
 </style>
