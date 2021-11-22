@@ -1,17 +1,14 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue'
+import Content from './components/Content.vue'
 </script>
 
 <template>
   <div class="relative w-full h-full flex justify-center items-center font-alata">
     <Header />
-    <!-- <img alt="Vue logo" src="./assets/logo.png" class="absolute top-0 left-0"/> -->
-    <div>
-      <HelloWorld msg="Hello Vue 3 + TypeScript + Vite"/>
-    </div>
+    <Content />
   </div>
 </template>
 
@@ -23,6 +20,13 @@ import Header from './components/Header.vue'
 
 html, body, #app {
   height: 100%;
+}
+
+body {
+  background-image: url(./assets/images/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #app {
