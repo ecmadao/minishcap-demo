@@ -27,13 +27,15 @@ export const store = createStore<IState>({
     actions: {
         async [ACTION_TYPES.SHORTEN] ({ state, commit }) {
             if (state.loading) return
-            if (!state.url) return
             if (!validator.isURL(state.url)) return
 
             commit(MUTATION_TYPES.SET_LOADING, true)
 
             try {
-                const res = await convertToShortURL(state.url)
+                const res = await convertToShortURL({
+                    url: state.url,
+                    ttlInSeconds: import.meta.env.VITE_LINK_TTL_IN_SECOND
+                })
                 commit(MUTATION_TYPES.SET_SHORT_LINK, res.result?.pop())
                 commit(MUTATION_TYPES.SET_URL, '')
             } catch (err) {
@@ -52,6 +54,11 @@ export const store = createStore<IState>({
         },
         [MUTATION_TYPES.SET_LOADING] (state: IState, loading: boolean) {
             state.loading = loading
+        }
+    },
+    getters: {
+        shortLink: (state) => {
+            return state.shortUrl?.short
         }
     }
 })

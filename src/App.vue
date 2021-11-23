@@ -1,12 +1,10 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import Header from './components/Header.vue'
 import Content from './components/Content.vue'
 </script>
 
 <template>
-  <div class="relative w-full h-full flex justify-center items-center font-alata">
+  <div class="relative w-full h-full flex justify-center items-center font-alata text-gray-600">
     <Header />
     <Content />
   </div>
@@ -34,7 +32,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   padding: 1.5rem;
 }
 </style>

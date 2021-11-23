@@ -5,9 +5,9 @@ import ShortLink from './ShortLink.vue'
 </script>
 
 <template>
-    <div class="flex-col justify-start container">
+    <div class="container">
         <transition appear name="slide-fade" mode="out-in">
-            <Form v-if="!$store.state.shortUrl" />
+            <Form v-if="!$store.getters.shortLink" />
             <div v-else class="flex flex-col">
                 <div class="mr-auto mb-6">
                     <Button v-on:click="reset">
@@ -26,7 +26,7 @@ import ShortLink from './ShortLink.vue'
 
 <style scoped>
 .slide-fade-enter-active {
-  transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .slide-fade-leave-active {
@@ -35,8 +35,8 @@ import ShortLink from './ShortLink.vue'
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateY(20px);
-  opacity: 0;
+    transform: translateY(20px);
+    opacity: 0;
 }
 
 .container {
