@@ -13,8 +13,7 @@ A simple website for minishcap. Built in Vite + TypeScript + TailwindCSS
 ```bash
 $ git clone https://github.com/ecmadao/minishcap-service.git
 $ cd minishcap-service
-$ npm i
-$ npm run start-dev
+$ docker-compose up
 ```
 
 ### Start the web
