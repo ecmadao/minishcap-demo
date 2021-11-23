@@ -14,8 +14,8 @@ import Content from './components/Content.vue'
 
 <style>
 @font-face {
-  font-family: "Alata";
-  src: local("Alata"),   url(./assets/fonts/Alata-Regular.ttf) format("truetype");
+  font-family: 'Alata';
+  src: local('Alata'),   url(./assets/fonts/Alata-Regular.ttf) format('truetype');
 }
 
 html, body, #app {
