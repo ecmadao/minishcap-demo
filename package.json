@@ -15,10 +15,12 @@
     "es6-promise": "^4.2.8",
     "localforage": "^1.10.0",
     "moment": "^2.29.1",
+    "validator": "^13.7.0",
     "vue": "^3.2.16",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@types/validator": "^13.7.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.3.11",

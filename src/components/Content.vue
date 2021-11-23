@@ -1,38 +1,59 @@
 <script setup lang="ts">
+import Form from './Form.vue'
 import Button from './Button.vue'
+import ShortLink from './ShortLink.vue'
 </script>
 
 <template>
-    <div class="border-b-4 border-gray-400 py-2 mr-8 text-6xl">
-        <input v-model="url" class="appearance-none bg-transparent border-none placeholder-gray-400 focus:placeholder-gray-300 focus:outline-none" type="url" placeholder="Put your link here">
+    <div class="flex-col justify-start container">
+        <transition appear name="slide-fade" mode="out-in">
+            <Form v-if="!$store.state.shortUrl" />
+            <div v-else class="flex flex-col">
+                <div class="mr-auto mb-6">
+                    <Button v-on:click="reset">
+                        <div class="p-2 text-xl inline-flex justify-center items-center">
+                            <font-awesome-icon :icon="['fas', 'chevron-circle-left']" />
+                            &nbsp;
+                            Back
+                        </div>
+                    </Button>
+                </div>
+                <ShortLink />
+            </div>
+        </transition>
     </div>
-    <Button>
-        <div class="p-4 text-6xl" v-on:click="convertToShortURL">
-            Shorten it
-        </div>
-    </Button>
 </template>
 
+<style scoped>
+.slide-fade-enter-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.3s ease-in-out;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.container {
+    width: 1000px;
+    min-width: 1000px;
+}
+</style>
+
 <script lang="ts">
-import { MUTATION_TYPES, ACTION_TYPES } from '../store'
+import { MUTATION_TYPES } from '../store'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
     name: 'Content',
-    computed: {
-        url: {
-            get(): string {
-                return this.$store.state.url
-            },
-            set(value: string) {
-                this.$store.commit(MUTATION_TYPES.SET_URL, value)
-            }
-        }
-    },
     methods: {
-        convertToShortURL() {
-            // TODO: check validation
-            this.$store.dispatch(ACTION_TYPES.SHORTEN)
+        reset() {
+            this.$store.commit(MUTATION_TYPES.SET_SHORT_LINK, null)
         }
     }
 })
