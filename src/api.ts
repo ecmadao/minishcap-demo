@@ -13,11 +13,10 @@ export interface IShortenURL {
     expiredAt?: Date
 }
 
-// TODO: get from env
-const baseURL = 'http://127.0.0.1:3334/api/v1/urls'
+const baseURL = import.meta.env.VITE_API
 
 export const convertToShortURL = async (url: string): Promise<IHttpResponse<IShortenURL[]>> =>
-    axios.post(baseURL, {
+    axios.post(`${baseURL}/urls`, {
         urls: [
             {
                 url,
