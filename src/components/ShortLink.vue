@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col items-baseline">
-        <a class="text-6xl" v-bind:href="$store.getters.shortLink">{{$store.getters.shortLink}}</a>
+        <a class="text-6xl text-left" v-bind:href="$store.getters.shortLink">{{$store.getters.shortLink}}</a>
         &nbsp;&nbsp;
         <span class="text-gray-400">{{expireTime}}</span>
     </div>
