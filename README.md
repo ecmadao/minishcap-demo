@@ -1,6 +1,8 @@
 # Minishcap Demo
 
-A simple website for minishcap. Built in Vite + TypeScript + TailwindCSS
+A simple website for minishcap. Built in Vite + TypeScript + TailwindCSS.
+
+You can check the online demo here: [minishcap-demo](https://ecmadao.github.io/minishcap-demo/)
 
 ![demo](./public/screenshot.gif)
 
