@@ -34,7 +34,7 @@ export const store = createStore<IState>({
             try {
                 const res = await convertToShortURL({
                     url: state.url,
-                    ttlInSeconds: import.meta.env.VITE_LINK_TTL_IN_SECOND
+                    ttlInSeconds: Number(import.meta.env.VITE_LINK_TTL_IN_SECOND)
                 })
                 commit(MUTATION_TYPES.SET_SHORT_LINK, res.result?.pop())
                 commit(MUTATION_TYPES.SET_URL, '')

@@ -24,3 +24,11 @@
     transform: translate(1rem, 1rem);
 }
 </style>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    name: 'Button',
+})
+</script>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Form from './Form.vue'
-import Button from './Button.vue'
+import Button from './Button/Button.vue'
 import ShortLink from './ShortLink.vue'
 </script>
 
